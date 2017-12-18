@@ -22,6 +22,8 @@ Clone this repository and create the spark-container image in the repository clo
 docker build -t oguatworld/spark .
 ```
 
+This uses the [Dockerfile](https://raw.githubusercontent.com/gutsche/spark-container/master/Dockerfile) file from this repository.
+
 Archive the image (if you want to transfer it to another machine) with
 
 ```
@@ -86,7 +88,7 @@ PlayerOne@68ed6db980a1 -> ~ -> toree_notebook
 Copy the link and paste it into your browser to access the notebook:
 
 <p align="center">
-  <img src="http://tinyurl.com/yagqxmuv" alt="Notebook Screenshot">
+  <img src="https://github.com/gutsche/spark-container/raw/master/notebook_screenshot.png" alt="Notebook Screenshot">
 </p>
 
 There is also an attempt to start `pyspark` through the alias `pyspark_jupyter` which executes
