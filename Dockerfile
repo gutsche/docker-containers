@@ -13,7 +13,7 @@ RUN yum install -y sudo git java-1.8.0-openjdk* wget tmux vim zsh sbt python-pip
 RUN pip install --upgrade pip
 
 RUN pip install numpy jupyter matplotlib
-RUN pip install https://dist.apache.org/repos/dist/dev/incubator/toree/0.2.0/snapshots/dev1/toree-pip/toree-0.2.0.dev1.tar.gz
+RUN pip install https://dist.apache.org/repos/dist/dev/incubator/toree/0.2.0-incubating-rc2/toree-pip/toree-0.2.0.tar.gz
 
 RUN cd /usr/lib && \
     wget https://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.tgz && \
