@@ -45,8 +45,8 @@ RUN adduser PlayerOne -s /bin/zsh && \
     chmod 0440 /etc/sudoers.d/user
 
 RUN cd /home/PlayerOne && \
-    sudo -u PlayerOne wget https://www.dropbox.com/s/kl2w1457wtejvbb/setup_180123.tgz && \
-    sudo -u PlayerOne tar xzf setup_180123.tgz && \
-    sudo -u PlayerOne rm setup_180123.tgz
+    sudo -u PlayerOne wget https://github.com/gutsche/docker-containers/raw/master/spark-container/setup.tgz && \
+    sudo -u PlayerOne tar xzf setup.tgz && \
+    sudo -u PlayerOne rm setup.tgz
 
 CMD ["su", "-", "PlayerOne"]
