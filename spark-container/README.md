@@ -22,7 +22,7 @@ Clone this repository and create the spark-container image in the repository clo
 docker build -t oguatworld/spark .
 ```
 
-This uses the [Dockerfile](https://raw.githubusercontent.com/gutsche/spark-container/master/Dockerfile) file from this repository.
+This uses the [Dockerfile](https://github.com/gutsche/docker-containers/raw/master/spark-container/Dockerfile) file from this repository.
 
 Archive the image (if you want to transfer it to another machine) with
 
@@ -35,8 +35,6 @@ and play it back on another machine with
 ```
 gunzip -c spark.tgz | docker load
 ```
-
-I am also keeping a recent image [on my DropBox](http://tinyurl.com/y9pmdqog). You can try to download it before attempting to build it.
 
 ## Run the spark-container image
 
