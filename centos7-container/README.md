@@ -16,7 +16,7 @@ Clone this repository and create the centos7-container image in the repository c
 docker build -t oguatworld/centos7 .
 ```
 
-This uses the [Dockerfile]() file from this repository.
+This uses the [Dockerfile](https://github.com/gutsche/docker-containers/blob/master/centos7-container/Dockerfile) file from this repository.
 
 Archive the image (if you want to transfer it to another machine) with
 
@@ -30,7 +30,7 @@ and play it back on another machine with
 gunzip -c centos7.tgz | docker load
 ```
 
-I am also keeping a recent image [on my DropBox](http://tinyurl.com/y9pmdqog). You can try to download it before attempting to build it.
+I am also keeping a recent image [on my DropBox](http://tinyurl.com/ybkq7vyn). You can try to download it before attempting to build it.
 
 ## Run the centos7-container image
 

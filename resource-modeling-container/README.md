@@ -16,7 +16,7 @@ Clone this repository and create the resource-modeling-container image in the re
 docker build -t oguatworld/resource-modeling .
 ```
 
-This uses the [Dockerfile]() file from this repository.
+This uses the [Dockerfile](https://github.com/gutsche/docker-containers/blob/master/resource-modeling-container/Dockerfile) file from this repository.
 
 Archive the image (if you want to transfer it to another machine) with
 
@@ -30,7 +30,7 @@ and play it back on another machine with
 gunzip -c resource-modeling.tgz | docker load
 ```
 
-I am also keeping a recent image [on my DropBox](http://tinyurl.com/y9pmdqog). You can try to download it before attempting to build it.
+I am also keeping a recent image [on my DropBox](http://tinyurl.com/ybh3wftc). You can try to download it before attempting to build it.
 
 ## Run the resource-modeling-container image
 
