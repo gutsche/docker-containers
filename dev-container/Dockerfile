@@ -17,7 +17,7 @@ RUN adduser PlayerOne -s /bin/zsh && \
     chmod 0440 /etc/sudoers.d/user
 
 RUN cd /home/PlayerOne && \
-    sudo -u PlayerOne wget https://github.com/gutsche/docker-containers/raw/master/dev/setup.tgz && \
+    sudo -u PlayerOne wget https://github.com/gutsche/docker-containers/raw/master/dev-container/setup.tgz && \
     sudo -u PlayerOne tar xzf setup.tgz && \
     sudo -u PlayerOne rm setup.tgz
 

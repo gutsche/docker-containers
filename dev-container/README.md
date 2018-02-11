@@ -16,7 +16,7 @@ Clone this repository and create the dev-container image in the repository clone
 docker build -t oguatworld/dev .
 ```
 
-This uses the [Dockerfile](https://github.com/gutsche/docker-containers/blob/master/dev/Dockerfile) file from this repository.
+This uses the [Dockerfile](https://github.com/gutsche/docker-containers/blob/master/dev-container/Dockerfile) file from this repository.
 
 Archive the image (if you want to transfer it to another machine) with
 
