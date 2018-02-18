@@ -8,7 +8,7 @@ RUN yum upgrade -y
 
 RUN yum groupinstall -y 'Development Tools'
 
-RUN yum install -y sudo git wget tmux vim zsh sbt python-pip python-devel libXpm-devel tkinter texlive
+RUN yum install -y sudo git wget tmux vim zsh sbt python-pip python-devel libXpm-devel tkinter perl-Tk perl-Digest-MD5
 
 RUN pip install --upgrade pip
 
@@ -22,6 +22,19 @@ RUN cd /usr/local && \
     cd ../.. && \
     rm -r pandoc-2.1.1 && \
     rm pandoc-2.1.1-linux.tar.gz
+
+RUN cd /tmp && \
+    wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
+    tar xzf install-tl-unx.tar.gz && \
+    cd install-tl-20180218 && \
+    wget https://github.com/gutsche/docker-containers/raw/master/forthepublic-container/texlive.profile && \
+    ./install-tl-20180218 -profile texlive.profile && \
+    cd /tmp && \
+    rm -rf install-tl*
+
+ENV PATH /usr/local/texlive/2017/bin/x86_64-linux:$PATH
+
+RUN tlmgr paper letter
 
 RUN adduser PlayerOne -s /bin/zsh && \
     echo "PlayerOne ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/user && \
