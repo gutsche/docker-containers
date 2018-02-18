@@ -26,13 +26,15 @@ RUN cd /usr/local && \
 RUN cd /tmp && \
     wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
     tar xzf install-tl-unx.tar.gz && \
-    cd install-tl-20180218 && \
+    cd install-tl-* && \
     wget https://github.com/gutsche/docker-containers/raw/master/forthepublic-container/texlive.profile && \
-    ./install-tl-20180218 -profile texlive.profile && \
+    ./install-tl -profile texlive.profile && \
     cd /tmp && \
     rm -rf install-tl*
 
-ENV PATH /usr/local/texlive/2017/bin/x86_64-linux:$PATH
+RUN echo "export PATH=\$PATH:/usr/local/texlive/2017/bin/x86_64-linux" | tee -a /etc/profile.d/texlive.sh > /dev/null
+
+ENV PATH $PATH:/usr/local/texlive/2017/bin/x86_64-linux
 
 RUN tlmgr paper letter
 
