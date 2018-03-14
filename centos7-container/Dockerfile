@@ -1,10 +1,18 @@
 FROM centos
 
-RUN yum upgrade -y
-
-RUN yum groupinstall -y 'Development Tools'
-
-RUN yum install -y sudo git wget tmux vim zsh sbt python-pip python-devel
+RUN yum upgrade -y && \
+	yum groupinstall -y 'Development Tools' && \
+	yum install -y \
+	sudo \
+	git \
+	wget \
+	tmux \
+	vim \
+	zsh \
+	sbt \
+	python-pip \
+	python-devel && \
+	yum clean all && rm -rf /var/cache/yum/*
 
 RUN adduser PlayerOne -s /bin/zsh && \
     echo "PlayerOne ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/user && \

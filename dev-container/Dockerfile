@@ -1,14 +1,22 @@
 FROM centos
 
-RUN curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo
-
-RUN yum install -y epel-release
-
-RUN yum upgrade -y
-
-RUN yum groupinstall -y 'Development Tools'
-
-RUN yum install -y sudo git wget tmux vim zsh sbt python-pip python-devel libXpm-devel tkinter
+RUN curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo && \
+	yum install -y epel-release && \
+	yum upgrade -y && \
+	yum groupinstall -y 'Development Tools' && \
+	yum install -y \
+	sudo \
+	git \
+	wget \
+	tmux \
+	vim \
+	zsh \
+	sbt \
+	python-pip \
+	python-devel \
+	libXpm-devel \
+	tkinter && \
+	yum clean all && rm -rf /var/cache/yum/*
 
 RUN pip install --upgrade pip
 
