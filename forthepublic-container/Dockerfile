@@ -32,7 +32,7 @@ RUN cd /usr/local && \
     rm -r pandoc-2.1.1 && \
     rm pandoc-2.1.1-linux.tar.gz
 
-ENV PATH $PATH:/usr/local/texlive/2017/bin/x86_64-linux
+ENV PATH $PATH:/usr/local/texlive/2018/bin/x86_64-linux
 
 RUN cd /tmp && \
     wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
@@ -42,7 +42,7 @@ RUN cd /tmp && \
     ./install-tl -profile texlive.profile && \
     cd /tmp && \
     rm -rf install-tl* && \
-	echo "export PATH=\$PATH:/usr/local/texlive/2017/bin/x86_64-linux" | tee -a /etc/profile.d/texlive.sh > /dev/null && \
+	echo "export PATH=\$PATH:/usr/local/texlive/2018/bin/x86_64-linux" | tee -a /etc/profile.d/texlive.sh > /dev/null && \
 	tlmgr paper letter && \
 	tlmgr install xetex lm lm-math unicode-math filehook xcolor zapfding booktabs
 
