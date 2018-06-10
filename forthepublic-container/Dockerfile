@@ -44,7 +44,7 @@ RUN cd /tmp && \
     rm -rf install-tl* && \
 	echo "export PATH=\$PATH:/usr/local/texlive/2018/bin/x86_64-linux" | tee -a /etc/profile.d/texlive.sh > /dev/null && \
 	tlmgr paper letter && \
-	tlmgr install xetex lm lm-math unicode-math filehook xcolor zapfding booktabs
+	tlmgr install xetex lm lm-math unicode-math filehook xcolor zapfding booktabs etoolbox collection-fontsrecommended xargs xkeyval microtype bigfoot lipsum clearsans fontaxes mweights pgf textpos ifmtarg parskip lastpage
 
 RUN adduser PlayerOne -s /bin/zsh && \
     echo "PlayerOne ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/user && \
