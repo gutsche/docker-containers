@@ -1,6 +1,7 @@
 FROM centos
 
 RUN curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo && \
+    curl https://copr.fedorainfracloud.org/coprs/daftaupe/hugo/repo/epel-7/daftaupe-hugo-epel-7.repo | tee /etc/yum.repos.d/daftaupe-hugo-epel-7.repo && \
 	yum install -y epel-release && \
 	yum upgrade -y && \
 	yum groupinstall -y 'Development Tools' && \
@@ -17,7 +18,8 @@ RUN curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.
 	libXpm-devel \
 	tkinter \
 	perl-Tk \
-	perl-Digest-MD5 && \
+	perl-Digest-MD5 \
+    hugo && \
 	yum clean all && rm -rf /var/cache/yum/*
 
 RUN pip install --upgrade pip && \
