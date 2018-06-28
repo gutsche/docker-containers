@@ -17,7 +17,7 @@ RUN curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.
 	yum clean all && rm -rf /var/cache/yum/*
 
 RUN pip install --upgrade pip && \
-	pip install numpy jupyter vega
+	pip install numpy jupyter vega pandas
 
 # histbook
 RUN cd /usr/local/lib && \
