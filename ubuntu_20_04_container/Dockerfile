@@ -1,0 +1,17 @@
+FROM ubuntu:20.04
+
+RUN apt update && \
+    apt upgrade -y && \
+    apt install -y sudo wget tmux vim zsh hugo pandoc python3 curl
+
+RUN useradd -m --shell /bin/zsh playerone && \
+    echo "playerone ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/user && \
+    chmod 0440 /etc/sudoers.d/user
+
+RUN cd /home/playerone && \
+    sudo -u playerone wget  && \
+    sudo -u playerone tar xzf setup.tgz && \
+    sudo -u playerone rm setup.tgz
+
+
+CMD ["su", "-", "playerone"]
