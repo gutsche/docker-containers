@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 RUN apt update && \
     apt upgrade -y && \
-    apt install -y sudo wget tmux vim zsh hugo pandoc python3 curl
+    apt install -y sudo wget tmux vim zsh python3 curl make
 
 RUN useradd -m --shell /bin/zsh playerone && \
     echo "playerone ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/user && \
