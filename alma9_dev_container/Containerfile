@@ -34,6 +34,7 @@ RUN adduser PlayerOne -s /bin/zsh && \
 RUN cd /home/PlayerOne && \
     sudo -u PlayerOne wget https://github.com/gutsche/docker-containers/raw/master/alma9_dev_container/setup.tgz && \
     sudo -u PlayerOne tar xzf setup.tgz && \
-    sudo -u PlayerOne rm setup.tgz
+    sudo -u PlayerOne rm setup.tgz && \
+    sudo -u PlayerOne git clone https://github.com/romkatv/powerlevel10k.git /home/PlayerOne/.oh-my-zsh/custom/themes/powerlevel10k 
 
 CMD ["su", "-", "PlayerOne"]
