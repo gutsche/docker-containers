@@ -22,6 +22,7 @@ RUN dnf update -y && \
 	iotop \
 	nload \
 	nano \
+	gcc gcc-toolset-14 gcc-c++ gcc-toolset-14-gcc-c++ \
 	powerline-fonts && \
 	dnf clean all
 
